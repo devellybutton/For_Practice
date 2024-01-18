@@ -1,6 +1,8 @@
 import Dice from './Dice';
 
-function Board({ name, color, num, sum, gameHistory }) {
+function Board({ name, color, gameHistory }) {
+    const num = gameHistory[gameHistory.length - 1] || 1;  // undefined인 경우 1이 들어감.
+    const sum = gameHistory.reduce((a, b) => a + b, 0);
 
     return (
             <div>
